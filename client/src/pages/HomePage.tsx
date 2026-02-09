@@ -3,7 +3,7 @@ import Card from "../components/Card";
 
 function HomePage() {
   return (
-    <div className="w-full h-screen bg-slate-50 flex flex-col overflow-hidden">
+    <div className="w-full min-h-screen bg-slate-50 flex flex-col">
       {/* Hero Section */}
       <div className="relative w-full flex-shrink-0 h-[65vh] min-h-[400px]">
         <img
@@ -80,6 +80,62 @@ function HomePage() {
                 className="flex-shrink-0 snap-center first:pl-0 last:pr-0"
               >
                 <Card {...place} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Plan Your Trip Section */}
+      <div className="w-full bg-slate-100 py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-800 mb-3">
+              Plan Your Trip
+            </h2>
+            <p className="text-slate-500">
+              Everything you need to explore Shimla stress-free
+            </p>
+          </div>
+
+          {/* Step Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: "📍",
+                title: "Pick destinations",
+                description:
+                  "Choose where you want to go from top attractions.",
+              },
+              {
+                icon: "📅",
+                title: "Choose dates",
+                description: "Select travel days that fit your schedule.",
+              },
+              {
+                icon: "🏨",
+                title: "Find stays",
+                description: "Compare hotels and homestays easily.",
+              },
+              {
+                icon: "✈️",
+                title: "Book & go",
+                description: "Confirm your trip and start exploring.",
+              },
+            ].map((step, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center mx-auto mb-4 text-2xl">
+                  {step.icon}
+                </div>
+                <h3 className="font-semibold text-slate-800 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
